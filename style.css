@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap");
+/* root */
+:root {
+  /* Color */
+  --white-color: white;
+  --black-color: black;
+  --input-background-color: rgba(0, 0, 0, 0.1);
+  --input-border-color: #f0f0f0;
+  --input-success-color: #2ecc71;
+  --input-error-color: #e91916;
+  --input-success-shadow-color: rgba(46, 204, 113, 0.9);
+  --input-error-shadow-color: rgba(233, 25, 22, 0.9);
+  --focus-border-color: #0077ff;
+  --focus-shadow-color: rgba(0, 119, 255, 0.2);
+  /* Size */
+  /* Font-size */
+  --font-size: 14px;
+  --font-family: inherit;
+}
+
+/* 노말라이즈 */
+body,
+ul,
+li,
+h1 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* 라이브러리 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.relative {
+  position: relative;
+}
+
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 시작 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  -ms-align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: var(--white-color);
+  border-radius: 5px;
+  box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+}
+
+.header {
+  background-color: var(--white-color);
+  padding: 20px 40px;
+}
+
+.header h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control input {
+  border: 2px solid var(--input-border-color);
+  background-color: var(--input-background-color);
+  border-radius: 5px;
+  display: block;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  padding: 10px;
+  width: 100%;
+  height: 30px;
+}
+
+.birthday-top {
+  width: 100%;
+  display: block;
+}
+
+.birthday-box {
+  position: relative;
+  display: block;
+  float: left;
+  width: 33.3%;
+  height: 30px;
+}
+
+.form-control input:focus {
+  background-color: var(--white-color);
+  outline: 0;
+  border-color: var(--focus-border-color);
+  -webkit-box-shadow: 0 0 0 2px var(--focus-shadow-color);
+  box-shadow: 0 0 10px var(--focus-shadow-color);
+}
+
+.form-control.success input {
+  border-color: var(--input-success-color);
+  box-shadow: 0 0 5px var(--input-success-shadow-color);
+}
+
+.form-control.error input {
+  border-color: var(--input-error-color);
+  box-shadow: 0 0 5px var(--input-error-shadow-color);
+}
+
+.birthday-box.success input {
+  border-color: var(--input-success-color);
+  box-shadow: 0 0 5px var(--input-success-shadow-color);
+}
+
+.birthday-box.error input {
+  border-color: var(--input-error-color);
+  box-shadow: 0 0 5px var(--input-error-shadow-color);
+}
+
+.birthday-box.success select {
+  border-color: var(--input-success-color);
+  box-shadow: 0 0 5px var(--input-success-shadow-color);
+}
+
+.birthday-box.error select {
+  border-color: var(--input-error-color);
+  box-shadow: 0 0 5px var(--input-error-shadow-color);
+}
+
+.form-control .fas {
+  visibility: hidden;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.form-control .fa-eye {
+  visibility: visible;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form-control .fa-eye-slash {
+  visibility: hidden;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#signup-password[type="text"] ~ .fa-eye {
+  visibility: hidden;
+}
+
+#signup-password[type="text"] ~ .fa-eye-slash {
+  visibility: visible;
+}
+
+#signup-password2[type="text"] ~ .fa-eye {
+  visibility: hidden;
+}
+
+#signup-password2[type="text"] ~ .fa-eye-slash {
+  visibility: visible;
+}
+
+.form-control.success i.fa-check-circle {
+  color: var(--input-success-color);
+  visibility: visible;
+}
+
+.form-control.successBirth i.fa-check-circle {
+  color: var(--input-success-color);
+  visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+  color: var(--input-error-color);
+  visibility: visible;
+}
+
+.form-control.errorBirth i.fa-exclamation-circle {
+  color: var(--input-error-color);
+  visibility: visible;
+}
+
+.form-control small {
+  display: block;
+  font-size: 0.75rem;
+  color: #bc6665;
+  padding-top: 5px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
+  background-color: #777;
+  border: 2px solid #777;
+  border-radius: 4px;
+  color: var(--white-color);
+  display: block;
+  font-family: var(--font-family);
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* select css */
+.select {
+  position: relative;
+}
+
+svg {
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 3px);
+  width: 10px;
+  height: 6px;
+  stroke-width: 2px;
+  stroke: #9098a9;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+select {
+  -webkit-appearance: none;
+  padding-left: 10px;
+  width: 100%;
+  border: 2px solid var(--input-border-color);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+  height: 100%;
+}
+
+select:required:invalid {
+  color: #5a667f;
+}
+
+select option {
+  color: #223254;
+}
+
+select option[value=""][disabled] {
+  display: none;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--focus-shadow-color);
+  -webkit-box-shadow: 0 0 0 2px var(--focus-shadow-color);
+  box-shadow: 0 0 0 2px var(--focus-shadow-color);
+}
+
+select:hover + svg {
+  stroke: var(--focus-shadow-color);
+}
+
+.sprites {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

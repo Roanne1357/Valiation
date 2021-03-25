@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>회원가입</h2>
+      </div>
+      <form id="form" class="form">
+        <div class="form-control">
+          <label for="signup-username">아이디</label>
+          <div>
+            <div>
+              <input
+                type="text"
+                id="signup-username"
+                autocomplete="off"
+                maxlength="20"
+                title="아이디를 만드세요"
+              />
+            </div>
+          </div>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="signup-password">비밀번호</label>
+          <div>
+            <div class="relative">
+              <input
+                type="password"
+                id="signup-password"
+                maxlength="20"
+                title="보안 비밀번호를 만드세요"
+              />
+              <i class="far fa-eye eye"></i>
+              <i class="far fa-eye-slash eye"></i>
+            </div>
+          </div>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="signup-password2">비밀번호 재확인</label>
+          <div>
+            <div class="relative">
+              <input
+                type="password"
+                id="signup-password2"
+                maxlength="20"
+                title="비밀번호 확인"
+              />
+              <i class="far fa-eye eye2"></i>
+              <i class="far fa-eye-slash eye2"></i>
+            </div>
+          </div>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <div class="birthday-top">
+            <label for="signup-birth-year">생년월일</label>
+          </div>
+          <div id="row" class="row">
+            <div class="birthday-box">
+              <input
+                id="signup-birth-year"
+                title="태어난 연도를 입력하세요"
+                type="number"
+                class="birthday"
+                placeholder="년"
+                autocomplete="off"
+              />
+            </div>
+            <div class="birthday-box">
+              <select
+                id="signup-birth-month"
+                name="month"
+                class="select"
+                title="태어난 달을 입력하세요"
+                required
+              >
+                <optgroup label="생월">
+                  <option id="month-check" value="month" disabled selected>
+                    월
+                  </option>
+                  <option value="1">1월</option>
+                  <option value="2">2월</option>
+                  <option value="3">3월</option>
+                  <option value="4">4월</option>
+                  <option value="5">5월</option>
+                  <option value="6">6월</option>
+                  <option value="7">7월</option>
+                  <option value="8">8월</option>
+                  <option value="9">9월</option>
+                  <option value="10">10월</option>
+                  <option value="11">11월</option>
+                  <option value="12">12월</option>
+                </optgroup>
+              </select>
+              <svg>
+                <use xlink:href="#select-arrow-down"></use>
+              </svg>
+              <svg class="sprites">
+                <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                  <polyline points="1 1 5 5 9 1"></polyline>
+                </symbol>
+              </svg>
+            </div>
+            <div class="birthday-box">
+              <select
+                id="signup-birth-day"
+                name="day"
+                class="select"
+                title="태어난 날짜를 입력하세요"
+                required
+              >
+                <optgroup label="생일">
+                  <option id="day-check" value="day" disabled selected>
+                    일
+                  </option>
+                  <option value="1">1일</option>
+                  <option value="2">2일</option>
+                  <option value="3">3일</option>
+                  <option value="4">4일</option>
+                  <option value="5">5일</option>
+                  <option value="6">6일</option>
+                  <option value="7">7일</option>
+                  <option value="8">8일</option>
+                  <option value="9">9일</option>
+                  <option value="10">10일</option>
+                  <option value="11">11일</option>
+                  <option value="12">12일</option>
+                  <option value="13">13일</option>
+                  <option value="14">14일</option>
+                  <option value="15">15일</option>
+                  <option value="16">16일</option>
+                  <option value="17">17일</option>
+                  <option value="18">18일</option>
+                  <option value="19">19일</option>
+                  <option value="20">20일</option>
+                  <option value="21">21일</option>
+                  <option value="22">22일</option>
+                  <option value="23">23일</option>
+                  <option value="24">24일</option>
+                  <option value="25">25일</option>
+                  <option value="26">26일</option>
+                  <option value="27">27일</option>
+                  <option value="28">28일</option>
+                  <option value="29">29일</option>
+                  <option value="30">30일</option>
+                  <option value="31">31일</option>
+                </optgroup>
+              </select>
+
+              <svg>
+                <use xlink:href="#select-arrow-down"></use>
+              </svg>
+              <svg class="sprites">
+                <symbol id="select-arrow-down2" viewbox="0 0 10 6">
+                  <polyline points="1 1 5 5 9 1"></polyline>
+                </symbol>
+              </svg>
+            </div>
+          </div>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="signup-email">이메일</label>
+          <div>
+            <div>
+              <input type="email" id="signup-email" />
+            </div>
+          </div>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <button type="submit">가입하기</button>
+      </form>
+    </div>
+    <script src="validCheck.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
