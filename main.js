@@ -10,12 +10,6 @@ const birthdayBox0 = document.getElementById('row').children[0];
 const birthdayBox1 = document.getElementById('row').children[1];
 const birthdayBox2 = document.getElementById('row').children[2];
 
-const zz = document.getElementById('row').children[0];
-
-setInterval(function(){
-	console.log(zz.className == "birthday-box error");
-}, 1000)
-
 form.addEventListener('submit', e => {
     e.preventDefault();
 	
@@ -231,7 +225,7 @@ function setAllSuccessFor(input) {
 
 
 function pwd_toggle() {
-    let pwd = document.querySelector('#signup-password');
+    const pwd = document.querySelector('#signup-password');
 
     if(pwd.type === "password"){
         pwd.type = "text";
@@ -241,7 +235,7 @@ function pwd_toggle() {
 }
 
 function pwd_toggle2() {
-    let pwd2 = document.querySelector('#signup-password2');
+    const pwd2 = document.querySelector('#signup-password2');
 
     if(pwd2.type === "password"){
         pwd2.type = "text";
@@ -256,23 +250,23 @@ function maxLengthCheck(object){
     }    
   }
 
-var elements = document.getElementsByClassName("eye");
-var elements2 = document.getElementsByClassName("eye2");
+const elements = document.getElementsByClassName("eye");
+const elements2 = document.getElementsByClassName("eye2");
 
-var myFunction = function() {
+const myFunction = function() {
     pwd_toggle()
 };
 
-var myFunction2 = function() {
+const myFunction2 = function() {
     pwd_toggle2()
 };
 
 
-for (var i = 0; i < elements.length; i++) {
+for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click', myFunction, false);
 }
 
-for (var i = 0; i < elements2.length; i++) {
+for (let i = 0; i < elements2.length; i++) {
     elements2[i].addEventListener('click', myFunction2, false);
 }
 
