@@ -10,61 +10,83 @@ const birthdayBox0 = document.getElementById('row').children[0];
 const birthdayBox1 = document.getElementById('row').children[1];
 const birthdayBox2 = document.getElementById('row').children[2];
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
+function eventListener(){
+	var elements = document.getElementsByClassName("eye");
+	var elements2 = document.getElementsByClassName("eye2");
+
+	var myFunction = function() {
+		pwd_toggle()
+	};
+
+	var myFunction2 = function() {
+		pwd_toggle2()
+	};
+
+
+	for (var i = 0; i < elements.length; i++) {
+		elements[i].addEventListener('click', myFunction, false);
+	}
+
+	for (var i = 0; i < elements2.length; i++) {
+		elements2[i].addEventListener('click', myFunction2, false);
+	}
+
+	form.addEventListener('submit', e => {
+		e.preventDefault();
+		
+		checkInputs();
+	});
 	
-	checkInputs();
-});
-
-username.addEventListener('input', e => {
-	e.preventDefault();
+	username.addEventListener('input', e => {
+		e.preventDefault();
+		
+		checkUserName();
+	});
 	
-	checkUserName();
-});
-
-email.addEventListener('input', e => {
-	e.preventDefault();
+	email.addEventListener('input', e => {
+		e.preventDefault();
+		
+		checkEmail();
+	});
 	
-	checkEmail();
-});
-
-password.addEventListener('input', e => {
-	e.preventDefault();
+	password.addEventListener('input', e => {
+		e.preventDefault();
+		
+		checkPassword();
+	});
 	
-	checkPassword();
-});
-
-password2.addEventListener('input', e => {
-	e.preventDefault();
+	password2.addEventListener('input', e => {
+		e.preventDefault();
+		
+		checkPassword();
+	});
 	
-	checkPassword();
-});
-
-birthdayYear.addEventListener('input', e => {
-	e.preventDefault();
+	birthdayYear.addEventListener('input', e => {
+		e.preventDefault();
+		
+		maxLengthCheck(birthdayYear);
+		checkBirthday();
+		checkBirthday2();
+		checkBirthday3();
+		checkBirthdayAll()
+	});
 	
-	maxLengthCheck(birthdayYear);
-	checkBirthday();
-	checkBirthday2();
-	checkBirthday3();
-	checkBirthdayAll()
-});
-
-birthdayMonth.addEventListener('change', e => {
-	e.preventDefault();
-	checkBirthday();
-	checkBirthday2();
-	checkBirthday3();
-	checkBirthdayAll()
-});
-
-birthdayDay.addEventListener('change', e => {
-	e.preventDefault();
-	checkBirthday();
-	checkBirthday2();
-	checkBirthday3();
-	checkBirthdayAll()
-});
+	birthdayMonth.addEventListener('change', e => {
+		e.preventDefault();
+		checkBirthday();
+		checkBirthday2();
+		checkBirthday3();
+		checkBirthdayAll()
+	});
+	
+	birthdayDay.addEventListener('change', e => {
+		e.preventDefault();
+		checkBirthday();
+		checkBirthday2();
+		checkBirthday3();
+		checkBirthdayAll()
+	});
+}
 
 function checkUserName() {
     if(isEmpty(username) || lessThan(username, 5) || containsHS(username)){
@@ -221,11 +243,8 @@ function setAllSuccessFor(input) {
 	formControl.className = 'form-control successAll';
 }
 
-	
-
-
 function pwd_toggle() {
-    const pwd = document.querySelector('#signup-password');
+    let pwd = document.querySelector('#signup-password');
 
     if(pwd.type === "password"){
         pwd.type = "text";
@@ -235,7 +254,7 @@ function pwd_toggle() {
 }
 
 function pwd_toggle2() {
-    const pwd2 = document.querySelector('#signup-password2');
+    let pwd2 = document.querySelector('#signup-password2');
 
     if(pwd2.type === "password"){
         pwd2.type = "text";
@@ -248,25 +267,6 @@ function maxLengthCheck(object){
     if (object.value.length > 4){
       object.value = object.value.slice(0, 4);
     }    
-  }
-
-const elements = document.getElementsByClassName("eye");
-const elements2 = document.getElementsByClassName("eye2");
-
-const myFunction = function() {
-    pwd_toggle()
-};
-
-const myFunction2 = function() {
-    pwd_toggle2()
-};
-
-
-for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('click', myFunction, false);
 }
 
-for (let i = 0; i < elements2.length; i++) {
-    elements2[i].addEventListener('click', myFunction2, false);
-}
-
+eventListener();
