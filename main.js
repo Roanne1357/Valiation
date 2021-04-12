@@ -113,7 +113,7 @@ function checkPassword() {
 		setSuccessFor(password);
 	}
 	
-	if(isEmpty(password2) || lessThan(password, 8) || equals(password, password2)) {
+	if(isEmpty(password2) || equals(password, password2)) {
 		setErrorFor(password2, '비밀번호가 일치하지 않습니다.');
 	} else{
 		setSuccessFor(password2);
